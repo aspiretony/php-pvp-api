@@ -1,7 +1,7 @@
 {
-    "name": "Solomidnet/php-pvp-api",
+    "name": "solomidnet/php-pvp-api",
     "description": "A binding for the league of legends api by riot games",
-    "homepage": "https://github.com/Solomidnet/php-pvp-api",
+    "homepage": "https://github.com/solomidnet/php-pvp-api",
     "license": "MIT",
     "keywords": ["http", "Leage of Legends", "api"],
     "authors": [
