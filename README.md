@@ -1,21 +1,21 @@
 Solomd PHP PVP api integration
 ==============================
 
-This is a simple php api integration script to help you get stared.
-<strong>it does not include rate limits</strong>
+This is a simple php api integration script to help you get stared.<Br>
+<strong>It does not include a rate limit manager. If you use this on a live site with public traffic you're not going to have a good time!</strong>
 
 should run ok on most php 5.2+
 
 
-<code>
+```php
 $api = new pvp_api('API-KEY');
 $me = $api->summoner_by_name('na','akuseru');
 var_dump($me);
-</code>
+```
 
-test script just does a quick dump. if you have any questions just open a ticket
+test script just does a quick dump. of all available endpoints. if you have questions open a ticket!
 
 
 Authors
 ================
-[Adam Smith (akuseru)](http://github.com/akuseru
+[Adam Smith (akuseru)](http://github.com/akuseru)
