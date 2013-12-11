@@ -24,6 +24,8 @@
  * THE SOFTWARE.
  */
 
+require_once 'vendor/autoload.php';
+
 /**
  * a generic pvp_api wrapper.
  * <strong>WARNING</strong> This wrapper does not monitor your rate limit.
@@ -49,17 +51,16 @@ class pvp_api {
      * this is our default url for making requests (in case it changes)
      * @var string
      */
-    private $_endpoint = "http://prod.api.pvp.net/";
+    private $_endpoint = "http://prod.api.pvp.net";
     /**
      * These are our default curl options
      * CURL is used by default with file_get_contents as a fallback.
      * @var array
      */
     private $_options = array (
-        'curl' => array(
-            CURLOPT_TIMEOUT => 5, //respond within 5 seconds
-            CURLOPT_USERAGENT => 'SOLOMID PVP_API 0.1.0', //our user agent for reporting. in case riot records it.
+        'headers' => array(
         ),
+        'options' => array(),
         'as_array' => false,
     );
 
@@ -152,19 +153,11 @@ class pvp_api {
         {
             $url .= '?api_key='.static::$_key;
         }
-        if (function_exists('curl_init')) {
-            $ch = curl_init();
-            $timeout = 5;
-            $this->_options['curl'][CURLOPT_URL] = $url;
-            $this->_options['curl'][CURLOPT_RETURNTRANSFER] = 1;
-            curl_setopt_array($ch, $this->_options['curl']);
-            $data = curl_exec($ch);
-            curl_close($ch);
-        } else if(ini_get('allow_url_fopen') == 1) {
-            $data = file_get_contents($url);
-        } else {
-            throw new Exception('We could not create a curl instance or, allow_url_fopen is disabled');
+        $data = Requests::get($url, $this->_options['headers'], $this->_options['options']);
+        if($data->status_code !== 200){
+            throw new Exception($data->body, $data->status_code, new Exception('Riot returned non 200 status code'));
         }
+        $data = $data->body;
         if ($data === null) {
             return null;
         } else {

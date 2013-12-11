@@ -1,0 +1,5 @@
+.idea/
+vendor/
+.idea/encodings.xml
+
+composer.phar
