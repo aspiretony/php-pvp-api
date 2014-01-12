@@ -77,52 +77,52 @@ class pvp_api {
                                 'params'        => array(
                                                     0 => '{region}'
                                 )),
-        'match_history' => array('url'          => '/api/lol/{region}/v1.1/game/by-summoner/{summonerId}/recent',
+        'match_history' => array('url'          => '/api/lol/{region}/v1.3/game/by-summoner/{summonerId}/recent',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerId}',
                                 )),
-        'league'        => array('url'          => '/api/{region}/v2.1/league/by-summoner/{summonerId}',
+        'league'        => array('url'          => '/api/lol/{region}/v2.2/league/by-summoner/{summonerId}',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerId}',
                                 )),
-        'stats_summary' => array('url'          => '/api/lol/{region}/v1.1/stats/by-summoner/{summonerId}/summary',
+        'stats_summary' => array('url'          => '/api/lol/{region}/v1.2/stats/by-summoner/{summonerId}/summary',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerId}',
                                  )),
-        'stats_ranked'  => array('url'          => '/api/lol/{region}/v1.1/stats/by-summoner/{summonerId}/ranked',
+        'stats_ranked'  => array('url'          => '/api/lol/{region}/v1.2/stats/by-summoner/{summonerId}/ranked',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerId}',
                                  )),
-        'summoner_masteries' => array('url'     => '/api/lol/{region}/v1.1/summoner/{summonerId}/masteries',
+        'summoner_masteries' => array('url'     => '/api/lol/{region}/v1.2/summoner/{summonerId}/masteries',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerId}',
                                  )),
-        'summoner_runes'     => array('url'     => '/api/lol/{region}/v1.1/summoner/{summonerId}/runes',
+        'summoner_runes'     => array('url'     => '/api/lol/{region}/v1.2/summoner/{summonerId}/runes',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerId}',
                                  )),
-        'summoner_by_name'   => array('url'     => '/api/lol/{region}/v1.1/summoner/by-name/{name}',
+        'summoner_by_name'   => array('url'     => '/api/lol/{region}/v1.2/summoner/by-name/{name}',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{name}',
                                  )),
-        'summoner_by_id'   => array('url'       => '/api/lol/{region}/v1.1/summoner/{summonerId}',
+        'summoner_by_id'   => array('url'       => '/api/lol/{region}/v1.2/summoner/{summonerId}',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerId}',
                                  )),
-        'summoner_ids'   => array('url'         => '/api/lol/{region}/v1.1/summoner/{summonerIds}/name',
+        'summoner_ids'   => array('url'         => '/api/lol/{region}/v1.2/summoner/{summonerIds}/name',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerIds}',
                                  )),
-        'teams'         => array('url'          => '/api/{region}/v2.1/team/by-summoner/{summonerId}',
+        'teams'         => array('url'          => '/api/lol/{region}/v2.2/team/by-summoner/{summonerId}',
                                  'params'       => array(
                                                     0 => '{region}',
                                                     1 => '{summonerId}',
